@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab Enkripsi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <strong>Lab Enkripsi AES-256</strong>
+    <nav><a href="index.html">Simpan data</a><a href="baca.php">Lihat data</a></nav>
+  </header>
+  <main>
+    <h1>Simpan data rahasia</h1>
+    <p class="lead">Teks yang Anda kirim akan dienkripsi di server sebelum masuk ke database.</p>
+    <section class="card">
+      <form action="simpan.php" method="POST">
+        <label for="isi">Data yang ingin disimpan</label>
+        <input type="text" id="isi" name="isi" placeholder="Contoh: password123" required autofocus>
+        <p class="hint">Data akan terbaca di Wireshark selama memakai HTTP biasa.</p>
+        <div class="actions">
+          <button class="btn" type="submit">Simpan (enkripsi)</button>
+          <a class="btn ghost" href="baca.php">Lihat data (dekripsi)</a>
+        </div>
+      </form>
+      <div class="flow">
+        <span>Plaintext</span> ▸ <span class="c">Ciphertext di database</span> ▸ <span class="p">Plaintext hasil dekripsi</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
